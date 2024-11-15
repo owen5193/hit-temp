@@ -41,7 +41,8 @@
   set text(lang: lang,
            region: region,
            font: font,
-           size: fontsize)
+           size: fontsize,
+           hyphenate: false)
   set heading(numbering: sectionnumbering)
   
       // Configure headings.
@@ -58,7 +59,7 @@
   set list(indent: 24pt, body-indent: 5pt, marker: ([•], [--]))
   
   align(right)[
-  #image("images/hit-logo.png", width: 30%)]
+  #image("images/hit-logo.png", width: 40%)]
   
   set text(size: 20pt)
 
@@ -87,7 +88,7 @@ align(horizon)[#grid(
     colspan: 1,
     image("images/at.png", width: 100%),
   ),
-  align(horizon)[nhsh.publichealthintelligence\@nhs\.scot],
+  align(horizon)[#link("mailto:nhsh.publichealthintelligence@nhs.scot")],
   align(top)[#grid.cell(
     colspan: 1,
     image("images/office.png", width: 100%),
@@ -103,7 +104,7 @@ align(bottom)[#grid(
       columns: 1,
       row-gutter: 1.5em,
       ..authors.map(author =>
-          align(left)[Prepared by #author.name. 
+          align(left)[Prepared by #author.name #abstract.
           ]
       )
     )]
@@ -123,9 +124,12 @@ align(left)[
 )
 ]
 
-  pagebreak()
+  
 
   if toc {
+  
+  pagebreak()
+  
     let title = if toc_title == none {
       auto
     } else {
@@ -145,15 +149,18 @@ align(left)[
       //fill: box(width: 1fr, repeat[-])
     );
     ]
+    
+    pagebreak()
+    
   }
   
-    pagebreak()
+    
     
 set page(
   footer: [
     #text(style: "italic", weight: 100, fill: luma(0))[NHS Highland \ Public Health Intelligence Team]
     #h(1fr)
-    #counter(page).display()
+    #context counter(page).display()
   ]
 )
 

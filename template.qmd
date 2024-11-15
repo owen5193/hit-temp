@@ -2,6 +2,8 @@
 title: "Health Intelligence Report"
 subtitle: "Local authority"
 author: "Owen McDonald"
+#Insert acknowledgements in the abstract. This will read: Prepared by author <abstract>
+abstract: "with support from Carolyn Hunter-Rowe, Ian Douglas and Jillian Malcolm"
 date: today
 date-format: "Do MMMM YYYY"
 execute:
