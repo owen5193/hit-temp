@@ -1,5 +1,7 @@
 # Hit-temp Format
 
+A quarto extension in the style of the NHS Highland Health Intelligence Report document.
+
 ## Installing
 
 ```bash
