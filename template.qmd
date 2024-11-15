@@ -1,0 +1,88 @@
+---
+title: "Health Intelligence Report"
+subtitle: "Local authority"
+author: "Owen McDonald"
+date: today
+date-format: "Do MMMM YYYY"
+execute:
+  enabled: true
+  warning: false
+  error: false
+  echo: false
+mainfont: "Arial"
+fig-cap-location: top
+tbl-cap-location: top
+citeproc: true
+bibliography: "references/project-refs.bibtex"
+csl: "styles/vanc-ss.csl"
+toc: true
+toc-depth: 3
+toc-title: Contents
+format:
+  hit-temp-typst: default
+---
+
+```{r load-packages}
+
+library(tidyverse)
+library(readxl)
+library(janitor)
+library(gt)
+
+```
+
+```{r big-data}
+
+
+
+```
+
+# Introduction
+
+{{< lipsum 1 >}}[@RN1227]
+
+# Methods
+
+* Item 1
+  + sub-item 1
+  + sub-item 2
+* Item 2
+  + sub-item 1
+
+# Results
+
+## Table
+
+{{< lipsum 1 >}} see @tbl-mtcars from the [mtcars dataset](https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/mtcars).
+
+```{r table}
+#| label: tbl-mtcars
+#| tbl-cap: "Top of mtcars data"
+
+head(mtcars, n = 10) %>% 
+  gt()
+
+```
+
+## Plot
+
+{{< lipsum 1 >}} see @fig-mtcars.
+
+```{r plot}
+#| label: fig-mtcars
+#| fig-cap: "MT cars speed to weight"
+
+mtcars %>% 
+  ggplot(aes(x = wt, y = qsec)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  theme_minimal()
+
+```
+
+{{< pagebreak >}}
+
+# References
+
+::: {#refs}
+:::
